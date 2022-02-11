@@ -8,20 +8,17 @@ plugins {
     id 'maven-publish'
 }
 
-group 'org.prunes'
-version '0.1'
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     runtimeOnly "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt'
 
-    api 'com.google.code.gson:gson:2.8.9'
-    api 'org.slf4j:slf4j-api:1.7.35'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'org.slf4j:slf4j-api:1.7.35'
 
     testImplementation 'ch.qos.logback:logback-core:1.2.6'
     testImplementation 'ch.qos.logback:logback-classic:1.2.6'
@@ -35,7 +32,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'org.prunes'
             artifactId = 'transceiver'
-            version = '0.1'
+            version = '0.1-SNAPSHOT'
             from components.java
         }
     }

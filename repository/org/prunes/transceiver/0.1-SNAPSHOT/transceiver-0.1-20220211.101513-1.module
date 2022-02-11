@@ -3,9 +3,9 @@
   "component": {
     "group": "org.prunes",
     "module": "transceiver",
-    "version": "0.1",
+    "version": "0.1-SNAPSHOT",
     "attributes": {
-      "org.gradle.status": "release"
+      "org.gradle.status": "integration"
     }
   },
   "createdBy": {
@@ -25,45 +25,15 @@
         "org.gradle.usage": "java-api",
         "org.jetbrains.kotlin.platform.type": "jvm"
       },
-      "dependencies": [
-        {
-          "group": "org.jetbrains.kotlin",
-          "module": "kotlin-stdlib-jdk8",
-          "version": {
-            "requires": "1.6.0"
-          }
-        },
-        {
-          "group": "org.jetbrains.kotlinx",
-          "module": "kotlinx-coroutines-core",
-          "version": {
-            "requires": "1.6.0-native-mt"
-          }
-        },
-        {
-          "group": "com.google.code.gson",
-          "module": "gson",
-          "version": {
-            "requires": "2.8.9"
-          }
-        },
-        {
-          "group": "org.slf4j",
-          "module": "slf4j-api",
-          "version": {
-            "requires": "1.7.35"
-          }
-        }
-      ],
       "files": [
         {
-          "name": "transceiver-0.1.jar",
-          "url": "transceiver-0.1.jar",
+          "name": "transceiver-0.1-SNAPSHOT.jar",
+          "url": "transceiver-0.1-SNAPSHOT.jar",
           "size": 16773,
-          "sha512": "082070dee31146e0fa7b24f7274a1ccb28b721533b586a2440fbb3fe1a3a6aa3cf9b2814b395ed953e8991f67a84eb0f520c51d2a30824984b44ff372f002b50",
-          "sha256": "3dff739c6a172e0f123eea67587068d91a56508e73a9358b36b6092b4d0733f1",
-          "sha1": "ac92bc2e5792d4450323ff08ee991f3ae3b7f59d",
-          "md5": "e3876246ae15755ddf16870ccaba2c58"
+          "sha512": "a56a66f16e62cdc240a71c74d74f27415b0f026c9b0dc645e1c4b9d8a52b16737c35d7c8f44cc5f3c0cab13dc025e8cbf53e8fb629205d026a6d4dc73a0f44ad",
+          "sha256": "af9541f820f40257fda18c973ccf8c8892ab042e3a006f94ad55d2ce23301cd0",
+          "sha1": "cdb9043f3adcc5cd7e1fc42c7d8d54d5238a247d",
+          "md5": "547425d9bf7b62278b362df02ca6519c"
         }
       ]
     },
@@ -117,13 +87,13 @@
       ],
       "files": [
         {
-          "name": "transceiver-0.1.jar",
-          "url": "transceiver-0.1.jar",
+          "name": "transceiver-0.1-SNAPSHOT.jar",
+          "url": "transceiver-0.1-SNAPSHOT.jar",
           "size": 16773,
-          "sha512": "082070dee31146e0fa7b24f7274a1ccb28b721533b586a2440fbb3fe1a3a6aa3cf9b2814b395ed953e8991f67a84eb0f520c51d2a30824984b44ff372f002b50",
-          "sha256": "3dff739c6a172e0f123eea67587068d91a56508e73a9358b36b6092b4d0733f1",
-          "sha1": "ac92bc2e5792d4450323ff08ee991f3ae3b7f59d",
-          "md5": "e3876246ae15755ddf16870ccaba2c58"
+          "sha512": "a56a66f16e62cdc240a71c74d74f27415b0f026c9b0dc645e1c4b9d8a52b16737c35d7c8f44cc5f3c0cab13dc025e8cbf53e8fb629205d026a6d4dc73a0f44ad",
+          "sha256": "af9541f820f40257fda18c973ccf8c8892ab042e3a006f94ad55d2ce23301cd0",
+          "sha1": "cdb9043f3adcc5cd7e1fc42c7d8d54d5238a247d",
+          "md5": "547425d9bf7b62278b362df02ca6519c"
         }
       ]
     }
