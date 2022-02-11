@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory
 import java.net.InetSocketAddress
 import java.net.ServerSocket
 import java.nio.charset.StandardCharsets
+import java.util.function.Consumer
 import kotlin.coroutines.EmptyCoroutineContext
 
 class Receiver(private val port: Int) {
@@ -16,6 +17,12 @@ class Receiver(private val port: Int) {
     private lateinit var job: Job
 
     var isRunning = true
+
+    fun listenJsonForJava(closure: Consumer<WideData>) {
+        listen {
+            closure.accept(Gson().fromJson(it, WideData::class.java))
+        }
+    }
 
     fun listenJson(closure: (WideData)->Unit) {
         listen {
