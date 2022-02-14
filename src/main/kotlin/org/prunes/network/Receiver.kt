@@ -33,11 +33,10 @@ class Receiver(private val port: Int) {
     @Suppress("BlockingMethodInNonBlockingContext")
     fun listen(closure: (String)->Unit) {
         job = CoroutineScope(EmptyCoroutineContext).launch {
-            log.info("start of command standby.")
+            log.info("start of command standby. [port=$port]")
             val listener = ServerSocket().apply { reuseAddress = true }
             listener.bind(InetSocketAddress(port))
             while(isRunning) {
-                log.info("listen($port)...")
                 withContext(Dispatchers.IO) {
                     listener.accept().getInputStream().use {
                         when(val command = String(it.readBytes(), StandardCharsets.UTF_8)) {
@@ -49,12 +48,12 @@ class Receiver(private val port: Int) {
                 }
             }
             listener.close()
-            log.info("End of command standby.")
+            log.info("End of command standby. [port=$port]")
         }
     }
 
     fun close() {
-        log.info("コマンド受付サーバー終了処理開始")
+        log.info("コマンド受付部品終了処理開始")
         isRunning = false
         Transmitter.sendTo(port, "quit")
         if(::job.isInitialized) {
