@@ -32,7 +32,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'org.prunes'
             artifactId = 'transceiver'
-            version = '0.1-SNAPSHOT'
+            version = '0.2-SNAPSHOT'
             from components.java
         }
     }

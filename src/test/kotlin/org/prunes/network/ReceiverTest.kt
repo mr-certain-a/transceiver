@@ -18,6 +18,7 @@ internal class ReceiverTest: Spek({
 
                 val data = WideData().apply {
                     registDate = LocalDateTime.now()
+                    directory = "."
                 }
 
                 Transmitter.sendTo(port, data)

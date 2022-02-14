@@ -1,0 +1,101 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.prunes",
+    "module": "transceiver",
+    "version": "0.2-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "transceiver-0.2-SNAPSHOT.jar",
+          "url": "transceiver-0.2-SNAPSHOT.jar",
+          "size": 20098,
+          "sha512": "aca2596097a240dfa9bec217502b26c41b3f4de8f195b15f2b30e845cdf77271c46a1214a17b0268a48de8475456c05585ba36cb11886f93e49041242eb01413",
+          "sha256": "22e3f156cea4bab3e15d00b0d324852a7ce3aba6f3080892210533e3fa40ed1e",
+          "sha1": "8baaf94dedfa123313e1571a03ef3c7995f787f8",
+          "md5": "56e58d2ec1c80703fa6b1d21c6dc9f7e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.6.0-native-mt"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.9"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.35"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "1.6.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "transceiver-0.2-SNAPSHOT.jar",
+          "url": "transceiver-0.2-SNAPSHOT.jar",
+          "size": 20098,
+          "sha512": "aca2596097a240dfa9bec217502b26c41b3f4de8f195b15f2b30e845cdf77271c46a1214a17b0268a48de8475456c05585ba36cb11886f93e49041242eb01413",
+          "sha256": "22e3f156cea4bab3e15d00b0d324852a7ce3aba6f3080892210533e3fa40ed1e",
+          "sha1": "8baaf94dedfa123313e1571a03ef3c7995f787f8",
+          "md5": "56e58d2ec1c80703fa6b1d21c6dc9f7e"
+        }
+      ]
+    }
+  ]
+}
