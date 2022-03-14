@@ -26,6 +26,8 @@ data class WideData(
     var atstime: LocalDateTime? = null,
     var expiration: LocalDateTime? = null,
     var directory: String? = null,
+    var stampName: String? = null,
+    var barcodeInfo: String? = null,
 
     var expansions0: String? = null,
     var expansions1: String? = null,
