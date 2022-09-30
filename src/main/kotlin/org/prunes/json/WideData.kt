@@ -4,7 +4,7 @@ import java.time.LocalDateTime
 import java.util.*
 
 data class WideData(
-    val key: String = UUID.randomUUID().toString(),
+    var key: String = UUID.randomUUID().toString(),
     var requestCommand: String? = null,
 
     var masterFileName: String? = null,
