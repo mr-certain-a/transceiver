@@ -30,7 +30,7 @@ dependencies {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'org.prunes'
+            groupId = 'bar.prunes'
             artifactId = 'transceiver'
             version = '0.3-SNAPSHOT'
             from components.java
