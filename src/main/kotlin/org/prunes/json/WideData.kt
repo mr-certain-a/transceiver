@@ -5,7 +5,7 @@ import java.util.*
 
 data class WideData(
     var key: String = UUID.randomUUID().toString(),
-    var requestCommand: String? = null,
+    var process: String? = null,
 
     var masterFileName: String? = null,
     var pid: String? = null,
