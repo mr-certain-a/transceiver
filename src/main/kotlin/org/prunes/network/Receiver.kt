@@ -1,13 +1,16 @@
 package org.prunes.network
 
-import com.google.gson.Gson
+import com.google.gson.*
 import kotlinx.coroutines.*
 import org.prunes.json.WideData
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import java.lang.reflect.Type
 import java.net.InetSocketAddress
 import java.net.ServerSocket
 import java.nio.charset.StandardCharsets
+import java.time.LocalDateTime
+import java.time.ZonedDateTime
 import java.util.function.Consumer
 import kotlin.coroutines.EmptyCoroutineContext
 
@@ -18,15 +21,22 @@ class Receiver(private val port: Int) {
 
     var isRunning = true
 
+    var gson: Gson =
+        GsonBuilder().registerTypeAdapter(LocalDateTime::class.java, object : JsonDeserializer<LocalDateTime> {
+            override fun deserialize(json: JsonElement, typeOfT: Type, context: JsonDeserializationContext)
+                    = ZonedDateTime.parse(json.asJsonPrimitive.asString).toLocalDateTime()
+        }).create()
+
+
     fun listenJsonForJava(closure: Consumer<WideData>) {
         listen {
-            closure.accept(Gson().fromJson(it, WideData::class.java))
+            closure.accept(gson.fromJson(it, WideData::class.java))
         }
     }
 
     fun listenJson(closure: (WideData)->Unit) {
         listen {
-            closure(Gson().fromJson(it, WideData::class.java))
+            closure(gson.fromJson(it, WideData::class.java))
         }
     }
 
