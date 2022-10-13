@@ -15,6 +15,7 @@ data class WideData(
     var registDate: LocalDateTime? = null,
     var depId: String? = null,
     var depName: String? = null,
+    var documentDate: LocalDateTime? = null,
     var documentKey: String? = null,
     var documentKeySequence: String? = null,
     var documentId: String? = null,
