@@ -29,11 +29,11 @@
         {
           "name": "transceiver-0.9.jar",
           "url": "transceiver-0.9.jar",
-          "size": 26039,
-          "sha512": "79de6097581dee3e14e6df97be6b59a30db4470e888fb6c54a4755b80b5730ac77dbc21840cceb0935d685a9b7835ad3004c1fcb67ecf661a327f122546221bf",
-          "sha256": "882231cd7bb3f7d48dfd0fb9635feca096dc74ffa3d623dc26a9b015ce7b7e50",
-          "sha1": "22ace065e81699b5d566a3c5233483ff36ecc605",
-          "md5": "159132ef3e73a3b2e2758b9e456c8390"
+          "size": 26092,
+          "sha512": "78a02d70edbf6577650cb3d8bc0d9ff365a51fdfd280cbc0b3551677aa689b160fd7ca1c1905c740e7e82d5e186584d65154ce840ef7bce7b567f84c9e2a01db",
+          "sha256": "a38261536ebfaa3bc2b5124efbf313cf1cf716b4d2690052c6f35373c3321ee4",
+          "sha1": "752b1735e3a584e9b719f912994b0757b1f8b759",
+          "md5": "e6d2eea1c1c8e1c6df96bc19cf2174d2"
         }
       ]
     },
@@ -89,11 +89,11 @@
         {
           "name": "transceiver-0.9.jar",
           "url": "transceiver-0.9.jar",
-          "size": 26039,
-          "sha512": "79de6097581dee3e14e6df97be6b59a30db4470e888fb6c54a4755b80b5730ac77dbc21840cceb0935d685a9b7835ad3004c1fcb67ecf661a327f122546221bf",
-          "sha256": "882231cd7bb3f7d48dfd0fb9635feca096dc74ffa3d623dc26a9b015ce7b7e50",
-          "sha1": "22ace065e81699b5d566a3c5233483ff36ecc605",
-          "md5": "159132ef3e73a3b2e2758b9e456c8390"
+          "size": 26092,
+          "sha512": "78a02d70edbf6577650cb3d8bc0d9ff365a51fdfd280cbc0b3551677aa689b160fd7ca1c1905c740e7e82d5e186584d65154ce840ef7bce7b567f84c9e2a01db",
+          "sha256": "a38261536ebfaa3bc2b5124efbf313cf1cf716b4d2690052c6f35373c3321ee4",
+          "sha1": "752b1735e3a584e9b719f912994b0757b1f8b759",
+          "md5": "e6d2eea1c1c8e1c6df96bc19cf2174d2"
         }
       ]
     }

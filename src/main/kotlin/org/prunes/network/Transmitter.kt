@@ -3,13 +3,10 @@ package org.prunes.network
 import com.google.gson.*
 import org.prunes.json.WideData
 import java.io.BufferedReader
-import java.io.BufferedWriter
 import java.io.InputStreamReader
-import java.io.OutputStreamWriter
 import java.lang.reflect.Type
 import java.net.InetSocketAddress
 import java.net.Socket
-import java.nio.charset.StandardCharsets
 import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.ZonedDateTime
@@ -30,10 +27,10 @@ object Transmitter {
             }
         }.isSuccess
 
-    fun sendWithResponse(port: Int, data: WideData): String? =
+    fun sendWithResponse(port: Int, data: WideData) =
         sendWithResponse(port, gson.toJson(data))
 
-    fun sendWithResponse(port: Int, command: String): String? =
+    fun sendWithResponse(port: Int, command: String): WideData? =
         runCatching {
             Socket().use {
                 it.connect(InetSocketAddress("localhost", port))
@@ -43,7 +40,7 @@ object Transmitter {
 
                     it.getInputStream().use { ins ->
                         BufferedReader(InputStreamReader(ins)).use {br->
-                            br.readLine()
+                            gson.fromJson(br.readLine(), WideData::class.java)
                         }
                     }
                 }
