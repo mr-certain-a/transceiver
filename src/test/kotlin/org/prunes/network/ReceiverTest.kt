@@ -12,7 +12,7 @@ internal class ReceiverTest: Spek({
         context("json send") {
             val port = 20202
             Receiver(port).let {
-                it.listenJson { json ->
+                it.listenJson { _, json ->
                     println("received: $json")
                 }
 
