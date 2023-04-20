@@ -30,6 +30,9 @@ object Transmitter {
             }
         }.isSuccess
 
+    fun sendWithResponse(port: Int, data: WideData): String? =
+        sendWithResponse(port, gson.toJson(data))
+
     fun sendWithResponse(port: Int, command: String): String? =
         runCatching {
             Socket().use {
