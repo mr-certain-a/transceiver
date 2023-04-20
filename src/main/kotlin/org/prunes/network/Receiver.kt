@@ -5,6 +5,8 @@ import kotlinx.coroutines.*
 import org.prunes.json.WideData
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import java.lang.reflect.Type
 import java.net.InetSocketAddress
 import java.net.ServerSocket
@@ -48,10 +50,10 @@ class Receiver(private val port: Int) {
             val listener = ServerSocket().apply { reuseAddress = true }
             listener.bind(InetSocketAddress(port))
             while(isRunning) {
-                withContext(Dispatchers.IO) {
-                    listener.accept().let { sock ->
-                        sock.getInputStream().use {
-                            when (val command = String(it.readBytes(), StandardCharsets.UTF_8)) {
+                listener.accept().let { sock ->
+                    sock.getInputStream().use {
+                        BufferedReader(InputStreamReader(it)).use {br ->
+                            when(val command = br.readLine()) {
                                 "quit" -> Unit
                                 "nop" -> Unit
                                 else -> closure(sock, command)
@@ -73,14 +75,12 @@ class Receiver(private val port: Int) {
             val listener = ServerSocket().apply { reuseAddress = true }
             listener.bind(InetSocketAddress(port))
             while(isRunning) {
-                withContext(Dispatchers.IO) {
-                    listener.accept().let { sock ->
-                        sock.getInputStream().use {
-                            when (val command = String(it.readBytes(), StandardCharsets.UTF_8)) {
-                                "quit" -> Unit
-                                "nop" -> Unit
-                                else -> closure(command)
-                            }
+                listener.accept().let { sock ->
+                    sock.getInputStream().use {
+                        when (val command = String(it.readBytes(), StandardCharsets.UTF_8)) {
+                            "quit" -> Unit
+                            "nop" -> Unit
+                            else -> closure(command)
                         }
                     }
                 }
