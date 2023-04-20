@@ -12,6 +12,10 @@ repositories {
     mavenCentral()
 }
 
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     runtimeOnly "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
@@ -32,7 +36,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'bar.prunes'
             artifactId = 'transceiver'
-            version = '0.6'
+            version = '0.7'
             from components.java
         }
     }
