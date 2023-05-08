@@ -1,19 +1,18 @@
 package org.prunes.network
 
-import com.google.gson.*
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import org.prunes.json.WideData
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.lang.reflect.Type
 import java.net.InetSocketAddress
 import java.net.ServerSocket
 import java.net.Socket
 import java.nio.charset.StandardCharsets
-import java.time.LocalDateTime
-import java.time.ZonedDateTime
 import java.util.function.BiConsumer
 import kotlin.coroutines.EmptyCoroutineContext
 
@@ -23,13 +22,6 @@ class Receiver(private val port: Int) {
     private lateinit var job: Job
 
     var isRunning = true
-
-    var gson: Gson =
-        GsonBuilder().registerTypeAdapter(LocalDateTime::class.java, object : JsonDeserializer<LocalDateTime> {
-            override fun deserialize(json: JsonElement, typeOfT: Type, context: JsonDeserializationContext)
-                    = ZonedDateTime.parse(json.asJsonPrimitive.asString).toLocalDateTime()
-        }).create()
-
 
     fun listenJsonForJava(closure: BiConsumer<Socket, WideData>) {
         listenCommand { sock, str->

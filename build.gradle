@@ -53,7 +53,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'bar.prunes'
             artifactId = 'transceiver'
-            version = '0.9'
+            version = '0.91'
             from components.java
         }
     }

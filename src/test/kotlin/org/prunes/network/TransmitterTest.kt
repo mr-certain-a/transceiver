@@ -11,7 +11,7 @@ internal class TransmitterTest: Spek({
                 it.listenCommand { sock, command ->
                     println("■received: $command")
 
-                    Transmitter.response(sock, "SOCKET RESPONSE")
+                    Transmitter.response(sock, "{process: \"SOCKET RESPONSE\", masterFileName=\"NOTHING.PDF\"}")
 
                     println("■sent to client")
                 }

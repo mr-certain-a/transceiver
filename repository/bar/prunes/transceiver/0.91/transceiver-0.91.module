@@ -3,7 +3,7 @@
   "component": {
     "group": "bar.prunes",
     "module": "transceiver",
-    "version": "0.9",
+    "version": "0.91",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -27,13 +27,13 @@
       },
       "files": [
         {
-          "name": "transceiver-0.9.jar",
-          "url": "transceiver-0.9.jar",
-          "size": 29018,
-          "sha512": "f96e6dfecc91bba69a77c941260760950ca6d5053e23a3c087566bce37948dcae761ab508637e9c7ac877f7415016a4eac60b2e8e925b8d86480830a0cf04988",
-          "sha256": "167fae047a808cfa000ebc4b39e9f9eac31f7e5538f3d3bbb9289bf3617561f1",
-          "sha1": "685eee4db864031893a45207b79d34fbfaa75b9c",
-          "md5": "df657d42c2dbf8cbd3c3073501a17599"
+          "name": "transceiver-0.91.jar",
+          "url": "transceiver-0.91.jar",
+          "size": 26398,
+          "sha512": "8a9c99607572fa1040b1c9fe070a5f4e14ca37726afca1141d47418deb74ef82640ef03423ac9d770d7727313c51c9842b32c7ef5cb9267f0a34b911c6894131",
+          "sha256": "65d99a5d00fcb9f43411fb9b7066d2e68f22440c0f2a791ecc3eb52806bf551f",
+          "sha1": "0842a5be80cce2862406478642d51e55afa61b35",
+          "md5": "f378e3f30937f33d36d633ef5d05fdc3"
         }
       ]
     },
@@ -87,13 +87,13 @@
       ],
       "files": [
         {
-          "name": "transceiver-0.9.jar",
-          "url": "transceiver-0.9.jar",
-          "size": 29018,
-          "sha512": "f96e6dfecc91bba69a77c941260760950ca6d5053e23a3c087566bce37948dcae761ab508637e9c7ac877f7415016a4eac60b2e8e925b8d86480830a0cf04988",
-          "sha256": "167fae047a808cfa000ebc4b39e9f9eac31f7e5538f3d3bbb9289bf3617561f1",
-          "sha1": "685eee4db864031893a45207b79d34fbfaa75b9c",
-          "md5": "df657d42c2dbf8cbd3c3073501a17599"
+          "name": "transceiver-0.91.jar",
+          "url": "transceiver-0.91.jar",
+          "size": 26398,
+          "sha512": "8a9c99607572fa1040b1c9fe070a5f4e14ca37726afca1141d47418deb74ef82640ef03423ac9d770d7727313c51c9842b32c7ef5cb9267f0a34b911c6894131",
+          "sha256": "65d99a5d00fcb9f43411fb9b7066d2e68f22440c0f2a791ecc3eb52806bf551f",
+          "sha1": "0842a5be80cce2862406478642d51e55afa61b35",
+          "md5": "f378e3f30937f33d36d633ef5d05fdc3"
         }
       ]
     }

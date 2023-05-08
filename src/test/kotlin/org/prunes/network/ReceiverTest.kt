@@ -41,7 +41,7 @@ internal class ReceiverTest: Spek({
                 runBlocking { delay(1000) }
                 it.close()
 
-                val res = Transmitter.sendTo(port, "error")
+                val res = runCatching { Transmitter.sendTo(port, "error") }.getOrNull()
                 println("送信結果:$res")
             }
         }

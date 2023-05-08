@@ -1,53 +1,40 @@
 package org.prunes.network
 
-import com.google.gson.*
 import org.prunes.json.WideData
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.lang.reflect.Type
 import java.net.InetSocketAddress
 import java.net.Socket
-import java.time.LocalDateTime
-import java.time.ZoneId
-import java.time.ZonedDateTime
 
 object Transmitter {
-    var gson: Gson =
-        GsonBuilder().registerTypeAdapter(LocalDateTime::class.java, object : JsonSerializer<LocalDateTime> {
-            override fun serialize(src: LocalDateTime, typeOfSrc: Type, context: JsonSerializationContext)
-                    = JsonPrimitive(ZonedDateTime.of(src, ZoneId.of("Asia/Tokyo")).toString())
-        }).create()
+    var toHost = "localhost"
 
     fun sendTo(port: Int, command: String) =
         kotlin.runCatching {
             Socket().let {
-                it.connect(InetSocketAddress("localhost", port))
+                it.connect(InetSocketAddress(toHost, port))
                 it.getOutputStream().write("$command${System.lineSeparator()}".toByteArray())
                 it.close()
             }
-        }.isSuccess
+        }.onFailure { throw it }.isSuccess
 
     fun sendWithResponse(port: Int, data: WideData) =
         sendWithResponse(port, gson.toJson(data))
 
     fun sendWithResponse(port: Int, command: String): WideData? =
-        runCatching {
-            Socket().use {
-                it.connect(InetSocketAddress("localhost", port))
-                it.getOutputStream().use { os ->
-                    os.write("$command${System.lineSeparator()}".toByteArray())
-                    os.flush()
+        Socket().use {
+            it.connect(InetSocketAddress(toHost, port))
+            it.getOutputStream().use { os ->
+                os.write("$command${System.lineSeparator()}".toByteArray())
+                os.flush()
 
-                    it.getInputStream().use { ins ->
-                        BufferedReader(InputStreamReader(ins)).use {br->
-                            gson.fromJson(br.readLine(), WideData::class.java)
-                        }
+                it.getInputStream().use { ins ->
+                    BufferedReader(InputStreamReader(ins)).use {br->
+                        gson.fromJson(br.readLine(), WideData::class.java)
                     }
                 }
             }
-        }.onFailure {
-            it.printStackTrace()
-        }.getOrNull()
+        }
 
     fun sendTo(port: Int, data: WideData) = sendTo(port, gson.toJson(data))
 
