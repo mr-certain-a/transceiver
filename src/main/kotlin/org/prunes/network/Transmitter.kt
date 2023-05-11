@@ -9,7 +9,7 @@ import java.net.Socket
 object Transmitter {
     var toHost = "localhost"
 
-    fun sendTo(port: Int, command: String) =
+    fun sentToIfFailureThrowException(port: Int, command: String) =
         kotlin.runCatching {
             Socket().let {
                 it.connect(InetSocketAddress(toHost, port))
@@ -17,6 +17,11 @@ object Transmitter {
                 it.close()
             }
         }.onFailure { throw it }.isSuccess
+
+    fun sendTo(port: Int, command: String) =
+        kotlin.runCatching {
+            sentToIfFailureThrowException(port, command)
+        }.isSuccess
 
     fun sendWithResponse(port: Int, data: WideData) =
         sendWithResponse(port, gson.toJson(data))
